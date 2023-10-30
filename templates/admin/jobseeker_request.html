@@ -1,0 +1,54 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<section class="section-hero overlay inner-page bg-image" style="background-image: url({% static 'images/hero_1.jpg' %});" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold">Post A Job</h1>
+          <div class="custom-breadcrumbs">
+            <a href="#">Home</a> <span class="mx-2 slash">/</span>
+            <a href="#">Aprroval Request</a> <span class="mx-2 slash">/</span>
+            <span class="text-white"><strong>Jobseeker</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+<br>
+<br>
+<div class="col-xl-12">
+    <div id="page-inner" >
+        <h1>Pending Jobseeker List</h1>
+            <table class="table table-bordered table-striped table-hover">
+        
+                <th class="info">Jobseeker Name</th>
+                <th class="info">Email</th>
+                <th class="info">Mobile</th>
+                <th class="info">Approve</th>
+                <th class="info">Reject</th>
+        {% for i in jobseeker  %}
+        
+        <tr>
+            
+            <td>{{ i.user.first_name}}</td>
+            <td>{{ i.user.email}}</td>
+            <td>{{ i.mobile}}</td>
+            <td><a href="aprove?id={{ i.user_id}}" class=" btn btn-success">Approve</a></td>
+            <td><a href="reject?id={{ i.user_id}}" class=" btn btn-danger">Reject</a></td>
+        
+        </tr>
+        
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</div>
+{% endblock  %}

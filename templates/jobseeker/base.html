@@ -1,0 +1,172 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Job &mdash; Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Free-Template.co" />
+    <link rel="shortcut icon" href="ftco-32x32.png">
+    
+    <link rel="stylesheet" href="{% static 'css/custom-bs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/line-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+  </head>
+  <body id="top">
+
+  {% comment %} <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div> {% endcomment %}
+    
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6"><a href="/jobseeker">Job Portal</a></div>
+
+          <nav class="mx-auto site-navigation">
+            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                <br>
+              <li><a href="/jobseeker" class="nav-link active">Home</a></li>
+              <li><a href="viewabout" class="nav-link active">About Us</a></li>
+              <li><a href="gallerry" class="nav-link active">Gallery</a></li>
+              <li><a href="job_list_view" class="nav-link active">Job List</a></li>
+              
+              <li class="has-children">
+                <a href="#" class="nav-link active">Jobseeker</a>
+                <ul class="dropdown">
+                  <li><a href="updateprofile" class="nav-link active">Complete Profile</a></li>
+                  <li><a href="appliedjobview" class="nav-link active">Dashboard</a></li>
+                  <li><a href="viewprofile" class="nav-link active">View Profile</a></li>
+                  <li><a href="result" class="nav-link active">Application Status</a></li>
+                </ul>
+              </li>
+              {% comment %} <li class="has-children">
+                <a href="services.html">Pages</a>
+                <ul class="dropdown">
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="service-single.html">Service Single</a></li>
+                  <li><a href="blog-single.html">Blog Single</a></li>
+                  <li><a href="portfolio.html">Portfolio</a></li>
+                  <li><a href="portfolio-single.html">Portfolio Single</a></li>
+                  <li><a href="testimonials.html">Testimonials</a></li>
+                  <li><a href="faq.html">Frequently Ask Questions</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+              </li> {% endcomment %}
+              {% comment %} <li><a href="blog.html">Blog</a></li>{% endcomment %}
+              {% comment %} <li><a href="contact.html" class="nav-link active">Contact</a></li> {% endcomment %}
+              {% comment %}<li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a></li> 
+              {% endcomment %}
+              <li class="d-lg-none"><a href="/">Log Out</a></li>
+            </ul>
+          </nav>
+          
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              {% comment %} <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a> {% endcomment %}
+              <a href="/" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log Out</a>
+            </div>
+            <a href="/" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+{% block content %}
+{% endblock  %}
+
+<footer class="site-footer">
+
+  <a href="#top" class="smoothscroll scroll-top">
+    <span class="icon-keyboard_arrow_up"></span>
+  </a>
+
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-6 col-md-4 mb-4 mb-md-0">
+        <h3>Useful Links</h3>
+        <ul class="list-unstyled">
+          <li><a href="/jobseeker">Home</a></li>
+          <li><a href="viewabout">About Us</a></li>
+          <li><a href="gallerry">Gallery</a></li>
+          {% comment %} <li><a href="#">Resources</a></li> {% endcomment %}
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 mb-4 mb-md-0">
+        <h3>Support</h3>
+        <ul class="list-unstyled">
+          <li>Support</li>
+          <li>Privacy</li>
+          <li>Terms of Service</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 mb-4 mb-md-0">
+        <h3>Contact Us</h3>
+          <ul class="list-unstyled">
+            <li>203 Fake St. Mountain View, San Francisco, California, USA</li>
+            <li>+2 392 3929 210</li>
+            <li>info@jobportal.com</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-12">
+        <p class="copyright"><small>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/stickyfill.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+<script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+
+<script src="{% static 'js/custom.js' %}"></script>
+
+ 
+</body>
+</html>

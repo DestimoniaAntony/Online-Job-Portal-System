@@ -1,0 +1,57 @@
+{% extends 'employer/base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<section class="section-hero overlay inner-page bg-image" style="background-image: url({% static 'images/hero_1.jpg' %});" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold">Applied Candidates List</h1>
+          <div class="custom-breadcrumbs">
+            <a href="#">Home</a> <span class="mx-2 active">/</span>
+            <a href="#">Applied Candidates List</a> <span class="mx-2 slash">/</span>
+            {% comment %} <span class="text-white"><strong>Jobseeker</strong></span> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+<br>
+<br>
+<div class="col-xl-12">
+    <div id="page-inner" >
+        <h1>Applied Candidates List</h1>
+            <table class="table table-bordered table-striped table-hover">
+        
+                <th class="info">Jobseeker Name</th>
+                <th class="info">Contact Number</th>
+                <th class="info">Mail Id</th>
+                <th class="info">Applied Post</th>
+                <th class="info">View Candidate</th>
+                <th class="info">Select</th>
+                <th class="info">Reject</th>
+        {% for i in bookings  %}
+        
+        <tr>
+            <td>{{ i.jobseeker.user.first_name}}</td>
+            <td>{{ i.jobseeker.mobile}}</td>
+            <td>{{ i.jobseeker.user.email}}</td>
+            <td>{{ i.job.title}}</td>
+            <td><a href="detailedcandidateview?id={{ i.jobseeker_id}}" class=" btn btn-danger">Detailed View</a></td>
+            <td><a href="aproveview?id={{ i.id}}" class=" btn btn-danger">Selected</a></td>
+            <td><a href="removed?id={{ i.id}}" class=" btn btn-danger">Reject</a></td>
+        
+        </tr>
+        
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</div>
+{% endblock  %}

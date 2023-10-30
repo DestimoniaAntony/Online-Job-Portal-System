@@ -1,0 +1,169 @@
+{% extends 'employer/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url({% static 'images/hero_1.jpg' %});" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-white font-weight-bold">Post A Job</h1>
+            <div class="custom-breadcrumbs">
+              <a href="#">Home</a> <span class="mx-2 slash">/</span>
+              <a href="#">Job</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong>Post a Job</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="site-section">
+      <div class="container">
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div>
+                <h2>Post A Job</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              {% comment %} <div class="col-6">
+                <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>Preview</a>
+              </div> {% endcomment %}
+              <div class="col-12">
+                <input type="submit" value="Save Job"  class="btn btn-block btn-primary btn-md"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <form class="p-4 p-md-5 border rounded" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <h3 class="text-black mb-5 border-bottom pb-2">Job Details</h3>
+              
+              {% comment %} <div class="form-group">
+                <label for="company-website-tw d-block">Upload Featured Image</label> <br>
+                <label class="btn btn-primary btn-md btn-file">
+                  Browse File<input type="file" name="image">
+                </label>
+              </div> {% endcomment %}
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" value={{f.email}} class="form-control" id="email" name="email" placeholder="you@yourdomain.com">
+              </div>
+              <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" value={{f.title}} class="form-control" id="job-title" name="title" placeholder="Product Designer">
+              </div>
+              <div class="form-group">
+                <label for="job-location">Location</label>
+                <input type="text" value={{f.location}} class="form-control" id="job-location" name="location" placeholder="e.g. New York">
+              </div>
+
+              {% comment %} <div class="form-group">
+                <label for="region">Job Region</label>
+                <input type="text" class="form-control" id="region" name="region" placeholder="e.g. New York">
+              </div> {% endcomment %}
+
+              <div class="form-group">
+                <label for="job_type">Job Type</label>
+                <select class="custom-select border-0 px-4" value={{f.job_type}} name="job_type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
+                  <option selected>Select Job Type</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Full Time">Full Time</option>
+                </select>             
+              </div>
+
+
+              <div class="form-group">
+                <label for="job-description">Job Description</label>
+                <input type="text" value={{f.description}} class="form-control" id="description" name="description">
+              </div>
+
+
+              <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
+              <div class="form-group">
+                <label for="company-name">Company Name</label>
+                <input type="text" value={{f.companyname}} class="form-control" id="company-name" name="companyname" placeholder="e.g. Disha Soft">
+              </div>
+
+              <div class="form-group">
+                <label for="job-description">Company Description (Optional)</label>
+                <input type="text" value={{f.company_description}} class="form-control" id="company_description" name="company_description">
+              </div>
+              
+              <div class="form-group">
+                <label for="company-website">Website (Optional)</label>
+                <input type="text" value={{f.website}} class="form-control" id="company-website" name="website" placeholder="https://">
+              </div>
+
+              <div class="form-group">
+                <label for="company-website-fb">Facebook Username (Optional)</label>
+                <input type="text" value={{f.fb_username}} class="form-control" id="company-website-fb" name="fb_username" placeholder="companyname">
+              </div>
+
+              <div class="form-group">
+                <label for="company-website-tw">Twitter Username (Optional)</label>
+                <input type="text" value={{f.tw_username}} class="form-control" id="company-website-tw" name="tw_username" placeholder="@companyname">
+              </div>
+              <div class="form-group">
+                <label for="company-website-tw">Linkedin Username (Optional)</label>
+                <input type="text" value={{f.lk_username}} class="form-control" id="company-website-tw" name="lk_username" placeholder="companyname">
+              </div>
+
+              {% comment %} <div class="form-group">
+                <label for="company-website-tw d-block">Upload Logo</label> <br>
+                <label class="btn btn-primary btn-md btn-file">
+                  Browse File<input type="file" name="logo">
+                </label>
+              </div> {% endcomment %}
+              {% comment %} <div class="form-group">
+                <label for="published_on">Published_on</label>
+                <input type="date" value={{f.published_on}} class="form-control" id="published_on" name="published_on" placeholder="vacancy published_on">
+              </div> {% endcomment %}
+              <div class="form-group">
+                <label for="vacancy">Number of vacancies</label>
+                <input type="text" value={{f.vacancy}} class="form-control" id="vacancy" name="vacancy" placeholder="vacancy">
+              </div>
+              <div class="form-group">
+                <label for="experience">experience</label>
+                <input type="text" value={{f.experience}} class="form-control" id="experience" name="experience" placeholder="experience">
+              </div>
+              <div class="form-group">
+                <label for="salary">salary</label>
+                <input type="text" value={{f.salary}} class="form-control" id="salary" name="salary" placeholder="salary">
+              </div>
+              <div class="form-group">
+                <label for="last_date">Last Date to apply</label>
+                <input type="date" value={{f.last_date}} class="form-control" id="last_date" name="last_date" placeholder="last_date">
+              </div>
+            
+          </div>
+
+         
+        </div>
+        <div class="row align-items-center mb-5">
+          
+          <div class="col-lg-4 ml-auto">
+            <div class="row">
+              {% comment %} <div class="col-6">
+                <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>Preview</a>
+              </div> {% endcomment %}
+              <div class="col-12">
+                <input type="submit" value="Save Job"  class="btn btn-block btn-primary btn-md"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+    </section>
+
+    {% endblock %}
